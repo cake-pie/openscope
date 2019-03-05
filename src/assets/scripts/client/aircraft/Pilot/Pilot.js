@@ -193,7 +193,7 @@ export default class Pilot {
         }
 
         this.cancelApproachClearance(aircraftModel);
-        this.cancelHoldingPattern();
+        //this.cancelHoldingPattern();
         this._mcp.setHeadingFieldValue(correctedHeading);
         this._mcp.setHeadingHold();
 
@@ -282,7 +282,7 @@ export default class Pilot {
             return [false, response];
         }
 
-        this.cancelHoldingPattern();
+        //this.cancelHoldingPattern();
 
         // Build readback
         const readback = {};
@@ -334,7 +334,7 @@ export default class Pilot {
         if (readback[0]) {
             this.hasDepartureClearance = true;
 
-            this.cancelHoldingPattern();
+            //this.cancelHoldingPattern();
         }
 
         return readback;
@@ -790,7 +790,7 @@ export default class Pilot {
             return verticalGuidance;
         }
 
-        this.cancelHoldingPattern();
+        //this.cancelHoldingPattern();
         this._fms.setArrivalRunway(runwayModel);
         this.hasApproachClearance = true;
 
@@ -899,7 +899,7 @@ export default class Pilot {
         }
 
         this._fms.skipToWaypointName(waypointName);
-        this.cancelHoldingPattern();
+        //this.cancelHoldingPattern();
         this._mcp.setHeadingLnav();
 
         return [true, `proceed direct ${waypointName}`];
